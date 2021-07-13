@@ -12,8 +12,11 @@ struct HabitView: View {
     var body: some View {
         HStack {
             Text(habit.name)
+                .frame(width: 4 * 20, alignment: .trailing)
             Spacer()
+                .frame(width: 20)
             TrackedList(habit: habit)
+                .frame(width: 14 * 20)
         }
     }
 }
@@ -35,12 +38,14 @@ struct TrackedList: View {
     
     var body: some View {
         var j = 0
-        HStack {
+        HStack(spacing: 0) {
             ForEach(0..<TrackedList.trackedLength) { i in
                 //if j < habit.tracked.length && sameDate(d1: habit.tracked[j], d2: ) {
                 //} else {
                 //}
                 Text("·")
+                    .frame(width: 20, height: 20)
+                
             }
         }
     }

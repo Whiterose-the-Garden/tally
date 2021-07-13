@@ -6,21 +6,21 @@
 //
 
 import SwiftUI
-var habits: [Habit] = []
+var habits: [Habit] = [Habit(name: "sleep"), Habit(name: "yolo")]
 
 struct HabitlistView: View {
     var body: some View {
-        //List(habits, \.name) { habit in
-        //    HabitView(habit: habit)
-        //}
-        Text("asdf")
+        List(habits, id: \.name) { habit in
+            HabitView(habit: habit)
+        }
     }
 }
 
-
-
 struct HabitListView_Previews: PreviewProvider {
     static var previews: some View {
-        HabitlistView()
+        Group {
+            HabitlistView()
+            HabitlistView()
+        }
     }
 }
